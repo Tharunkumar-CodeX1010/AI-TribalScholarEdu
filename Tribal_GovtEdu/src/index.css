@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* High-contrast mode for the accessibility toolbar. */
+html.hc body {
+  filter: contrast(1.32) saturate(1.05);
+}
+
+html.hc a,
+html.hc button {
+  text-underline-offset: 2px;
+}
+
+html.hc .border,
+html.hc [class*="border-"] {
+  border-color: rgba(15, 23, 42, 0.55) !important;
+}
